@@ -33,4 +33,55 @@ class parcelsController{
       message:'could not add new parcel'
     })
   }
+  static getOne(req, res){
+    const id = req.params.id;
+    const oneParcel = Parcels.find(parcel => parcel.id === id)
+    if(parcel){
+      return res.json({
+        message:'parcel found',
+        parcel:oneParcel
+      })
+    }
+    return res.status(400).json({
+      message:'parcel not found'
+    })
+  }
+  static updateOne(req, res){
+    const id = req.params.id;
+    const updateParcel = Parcels.find(parcel => parcel.id === id)
+    if(updateParcel){
+      const newParcel = {
+        id,destinationLocation,weight,comment,
+        pickupLocation:req.body.pickupLocation
+      }
+      return res.json({
+        message:'parcel found',
+        parcel:newParcel
+      })
+    }
+    return res.status(400).json({
+      message:'parcel not found'
+    })
+  }
+  static removeParcel(req, res){
+    let id = req.params.id
+    const oneParcel = Parcels.find(parcel =>{
+      return parcel.id == id //returns true if the parcel is found with the id from params
+    })
+    if(oneParcel){
+      const newParcels = Parcels.filter(parcel =>{
+        return parcel !== oneParcel //returns an object without filtered parcel
+      })
+      res.status(200).json({
+        message:'parcel deleted',
+        Parcels:newParcels
+      })
+    }else{
+      return res.status(400).json({
+        message:'parcel do not exist' 
+      })
+    }
+  }
 }
+
+export default parcelsController

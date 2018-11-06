@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rmdir /S/Q build",
     "clean-routes": "cd build && rmdir /S/Q routes",
-    "build": "npm run clean && mkdir build  && babel src/server.js db/parcel.js controllers/parcelsController.js -d build && npm run build-routes",
+    "build": "mkdir build  && babel src/server.js db/parcels.js controllers/parcelsController.js -d build",
     "build-routes": "cd build && mkdir routes && babel .././routes/route.js -d routes",
     "start": "npm run build && nodemon compiled/index.js"
   },

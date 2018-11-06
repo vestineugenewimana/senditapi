@@ -1,0 +1,40 @@
+{
+  "name": "senditapi",
+  "version": "1.0.0",
+  "description": "Sendit api,this api will power up the front end to allow users create parcels orders cancel them,list specific ones also list them by the user that created them",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel src/server.js && nodemon compiled/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpybruce/sendit.git"
+  },
+  "keywords": [
+    "Sendit",
+    "Parcels"
+  ],
+  "author": "Igwaneza Bruce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helpybruce/sendit/issues"
+  },
+  "homepage": "https://github.com/helpybruce/sendit#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^2.0.7",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "nodemon": "^1.18.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}

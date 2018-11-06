@@ -44,3 +44,21 @@ SendIT is a courier service that helps users deliver parcels to different destin
 - Linting Library: ​ESLint
 - Style Guide: ​Airbnb
 - Testing Framework: ​Mocha ​​ or ​ Jasmine
+
+## preview inside postman
+
+### all parcels
+
+![](./all.PNG)
+
+### one parcel
+
+![](./one.png)
+
+### create a parcel
+
+![](./created.PNG)
+
+### delete a parcel
+
+![](./delete.png)

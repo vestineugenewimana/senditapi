@@ -32,3 +32,4 @@ const parcels = [
     comment: "Laptop"
   }
 ];
+export default parcels

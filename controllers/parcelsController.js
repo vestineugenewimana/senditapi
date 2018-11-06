@@ -9,7 +9,7 @@ class parcelsController {
   }
 
   static createParcel(req, res) {
-    const newId = Parcels[Parcels.lenght - 1].id + 1;
+    const newId = Parcels[Parcels.length - 1].id + 1;
     const pickupLocation = req.body.pickupLocation;
     const destinationLocation = req.body.destinationLocation;
     const weight = req.body.weight;
@@ -71,10 +71,12 @@ class parcelsController {
 
   static removeParcel(req, res) {
     const id = req.params.id;
-    const oneParcel = Parcels.find(parcel => parcel.id == id, // returns true if the parcel is found with the id from params
+    const oneParcel = Parcels.find(
+      parcel => parcel.id == id, // returns true if the parcel is found with the id from params
     );
     if (oneParcel) {
-      const newParcels = Parcels.filter(parcel => parcel !== oneParcel, // returns an object without filtered parcel
+      const newParcels = Parcels.filter(
+        parcel => parcel !== oneParcel, // returns an object without filtered parcel
       );
       res.status(200).json({
         message: 'parcel deleted',

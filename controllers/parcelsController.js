@@ -48,27 +48,6 @@ class parcelsController {
     });
   }
 
-  static updateOne(req, res) {
-    const id = req.params.id;
-    const updateParcel = Parcels.find(parcel => parcel.id === id);
-    if (updateParcel) {
-      const newParcel = {
-        id,
-        destinationLocation,
-        weight,
-        comment,
-        pickupLocation: req.body.pickupLocation,
-      };
-      return res.json({
-        message: 'parcel found',
-        parcel: newParcel,
-      });
-    }
-    return res.status(400).json({
-      message: 'parcel not found',
-    });
-  }
-
   static removeParcel(req, res) {
     const id = req.params.id;
     const oneParcel = Parcels.find(

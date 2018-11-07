@@ -30,4 +30,24 @@ describe('PARCELS', () => {
         });
     });
   });
+  describe('adding a parcel', () => {
+    it('should add new parcel', (done) => {
+      const parcel = {
+        pickupLocation: 'Ruhango,Avenue 25 street',
+        destinationLocation: 'Musanze, City Market',
+        weight: '400 g',
+        quantity: '8',
+        comment: 'clothes',
+      };
+      chai
+        .request(app)
+        .post('/api/v1/parcels')
+        .send(parcel)
+        .end((err, res) => {
+          chai.expect(res.statusCode).to.be.equal(200);
+          chai.expect(res.body).to.be.a('object');
+          done();
+        });
+    });
+  });
 });

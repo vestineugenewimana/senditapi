@@ -70,3 +70,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 ### passed all tests :)
 
 ![](./passed.PNG)
+
+### nyc coverage reports: to work with travis
+
+![](nyc.PNG)

@@ -50,4 +50,17 @@ describe('PARCELS', () => {
         });
     });
   });
+  describe('Delete a parcel with id 2', () => {
+    it('should return one parcel object', (done) => {
+      const id = 2;
+      chai
+        .request(app)
+        .del(`/api/v1/parcels/${id}`)
+        .end((err, res) => {
+          chai.expect(res.statusCode).to.be.equal(200);
+          chai.expect(res.body).to.be.a('object');
+          done();
+        });
+    });
+  });
 });

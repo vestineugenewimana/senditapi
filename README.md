@@ -6,33 +6,33 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ## Tasks:
 
-- [ ] Create Server Folder
-  - [ ] npm Init
-  - [ ] Add express eslint babel body-parser
-- [ ] Create a db file (with data structures schema)
-- [ ] List all parcels with GET /api/v1/parcels
-  - [ ] Create route
-- [ ] Setup tests
-  - [ ] Install mocha and chai
-  - [ ] Add npm test script
-- [ ] Make sure the tests are working!
-- [ ] GET route to list all parcels (/api/v1/parcels)
-  - [ ] Add test
-- [ ] GET route to list one parcel by id (/api/v1/parcels/:parcelId )
+- [x] Create Server Folder
+  - [x] npm Init
+  - [x] Add express eslint babel body-parser
+- [x] Create a db file (with data structures schema)
+- [x] List all parcels with GET /api/v1/parcels
+  - [x] Create route
+- [x] Setup tests
+  - [x] Install mocha and chai
+  - [x] Add npm test script
+- [x] Make sure the tests are working!
+- [x] GET route to list all parcels (/api/v1/parcels)
+  - [x] Add test
+- [x] GET route to list one parcel by id (/api/v1/parcels/:parcelId )
   - [ ] Validate id
-  - [ ] Create route
+  - [x] Create route
   - [ ] Add test
-- [ ] POST route to add a new parcel (/api/v1/parcels)
-  - [ ] Create route
+- [x] POST route to add a new parcel (/api/v1/parcels)
+  - [x] Create route
   - [ ] Validate parcel
   - [ ] Add test
-- [ ] PUT route to cancel a specific parcel by id(/api/v1/:parcelId/cancel)
+- [x] PUT route to cancel a specific parcel by id(/api/v1/:parcelId/cancel)
   - [ ] Create route
   - [ ] Validate id
   - [ ] Validate updates
   - [ ] Add test
-- [ ] Delete a record with DELETE /api/v1/parcels/:parcelId
-  - [ ] Create route
+- [x] Delete a record with DELETE /api/v1/parcels/:parcelId
+  - [x] Create route
   - [ ] Validate id
   - [ ] Add test
 
@@ -53,7 +53,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ### one parcel
 
-![](./one.PNG)
+![](./one.png)
 
 ### create a parcel
 
@@ -61,4 +61,4 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ### delete a parcel
 
-![](./delete.PNG)
+![](./delete.png)

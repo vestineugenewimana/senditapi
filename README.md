@@ -36,6 +36,9 @@ SendIT is a courier service that helps users deliver parcels to different destin
   - [ ] Validate id
   - [ ] Add test
 
+- [ ] Travic ci
+  - [ ] set up
+
 * [ ] Deploy!
 
 ## Technologies that will be used for api:

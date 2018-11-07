@@ -62,3 +62,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 ### delete a parcel
 
 ![](./delete.png)
+
+### passed first test :)
+
+![](./passed.PNG)

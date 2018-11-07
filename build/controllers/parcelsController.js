@@ -23,14 +23,14 @@ var parcelsController = function () {
     key: 'getParcels',
     value: function getParcels(req, res) {
       return res.json({
-        'message': 'List of all parcels',
+        message: 'List of all parcels',
         parcels: _parcels2.default
       });
     }
   }, {
     key: 'createParcel',
     value: function createParcel(req, res) {
-      var newId = _parcels2.default[_parcels2.default.lenght - 1].id + 1;
+      var newId = _parcels2.default[_parcels2.default.length - 1].id + 1;
       var pickupLocation = req.body.pickupLocation;
       var destinationLocation = req.body.destinationLocation;
       var weight = req.body.weight;
@@ -59,33 +59,12 @@ var parcelsController = function () {
     value: function getOne(req, res) {
       var id = req.params.id;
       var oneParcel = _parcels2.default.find(function (parcel) {
-        return parcel.id === id;
+        return parcel.id == id;
       });
-      if (parcel) {
+      if (oneParcel) {
         return res.json({
           message: 'parcel found',
           parcel: oneParcel
-        });
-      }
-      return res.status(400).json({
-        message: 'parcel not found'
-      });
-    }
-  }, {
-    key: 'updateOne',
-    value: function updateOne(req, res) {
-      var id = req.params.id;
-      var updateParcel = _parcels2.default.find(function (parcel) {
-        return parcel.id === id;
-      });
-      if (updateParcel) {
-        var newParcel = {
-          id: id, destinationLocation: destinationLocation, weight: weight, comment: comment,
-          pickupLocation: req.body.pickupLocation
-        };
-        return res.json({
-          message: 'parcel found',
-          parcel: newParcel
         });
       }
       return res.status(400).json({
@@ -97,12 +76,14 @@ var parcelsController = function () {
     value: function removeParcel(req, res) {
       var id = req.params.id;
       var oneParcel = _parcels2.default.find(function (parcel) {
-        return parcel.id == id; //returns true if the parcel is found with the id from params
-      });
+        return parcel.id == id;
+      } // returns true if the parcel is found with the id from params
+      );
       if (oneParcel) {
         var newParcels = _parcels2.default.filter(function (parcel) {
-          return parcel !== oneParcel; //returns an object without filtered parcel
-        });
+          return parcel !== oneParcel;
+        } // returns an object without filtered parcel
+        );
         res.status(200).json({
           message: 'parcel deleted',
           Parcels: newParcels

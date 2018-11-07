@@ -6,9 +6,12 @@
   "scripts": {
     "clean": "rmdir /S/Q build",
     "clean-routes": "cd build && rmdir /S/Q routes",
-    "build": "mkdir build  && babel src/server.js db/parcels.js controllers/parcelsController.js -d build",
-    "build-routes": "cd build && mkdir routes && babel .././routes/route.js -d routes",
-    "start": "npm run build && nodemon compiled/index.js"
+    "clean-test": "cd build && rmdir /S/Q test",
+    "build-test": "npm run clean-test && cd build && mkdir test && babel .././test/test.js",
+    "build": "npm run clean && mkdir build  && babel src/server.js db/parcels.js controllers/parcelsController.js -d build",
+    "build-routes": "npm run clean-routes && cd build && mkdir routes && babel .././routes/route.js -d routes",
+    "start": "npm run build && nodemon compiled/index.js",
+    "test": "mocha compiled/index.js --exit"
   },
   "repository": {
     "type": "git",
@@ -28,12 +31,12 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^2.0.7",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.2.0",
     "nodemon": "^1.18.5"
   },
   "dependencies": {

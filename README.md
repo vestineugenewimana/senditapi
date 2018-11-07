@@ -1,6 +1,4 @@
-# SENDIT Api
-
-https://travis-ci.com/helpybruce/senditapi.svg?branch=develop
+# SENDITAPI [![Build Status](https://travis-ci.com/helpybruce/senditapi.svg?branch=develop)](https://travis-ci.com/helpybruce/senditapi)
 
 ![](./logo.png)
 

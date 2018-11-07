@@ -32,6 +32,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
   - [ ] Validate updates
   - [ ] Add test
 - [x] Delete a record with DELETE /api/v1/parcels/:parcelId
+
   - [x] Create route
   - [ ] Validate id
   - [ ] Add test
@@ -66,6 +67,6 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ![](./delete.PNG)
 
-### passed first test :)
+### passed all tests :)
 
 ![](./passed.PNG)

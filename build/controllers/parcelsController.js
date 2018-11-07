@@ -31,11 +31,13 @@ var parcelsController = function () {
     key: 'createParcel',
     value: function createParcel(req, res) {
       var newId = _parcels2.default[_parcels2.default.length - 1].id + 1;
-      var pickupLocation = req.body.pickupLocation;
-      var destinationLocation = req.body.destinationLocation;
-      var weight = req.body.weight;
-      var quantity = req.body.quantity;
-      var comment = req.body.comment;
+      var _req$body = req.body,
+          pickupLocation = _req$body.pickupLocation,
+          destinationLocation = _req$body.destinationLocation,
+          weight = _req$body.weight,
+          comment = _req$body.comment,
+          quantity = _req$body.quantity;
+
       var newParcel = {
         id: newId,
         comment: comment,
@@ -58,6 +60,7 @@ var parcelsController = function () {
     key: 'getOne',
     value: function getOne(req, res) {
       var id = req.params.id;
+
       var oneParcel = _parcels2.default.find(function (parcel) {
         return parcel.id == id;
       });
@@ -75,6 +78,7 @@ var parcelsController = function () {
     key: 'removeParcel',
     value: function removeParcel(req, res) {
       var id = req.params.id;
+
       var oneParcel = _parcels2.default.find(function (parcel) {
         return parcel.id == id;
       } // returns true if the parcel is found with the id from params
@@ -84,15 +88,14 @@ var parcelsController = function () {
           return parcel !== oneParcel;
         } // returns an object without filtered parcel
         );
-        res.status(200).json({
+        return res.status(200).json({
           message: 'parcel deleted',
           Parcels: newParcels
         });
-      } else {
-        return res.status(400).json({
-          message: 'parcel do not exist'
-        });
       }
+      return res.status(400).json({
+        message: 'parcel do not exist'
+      });
     }
   }]);
 

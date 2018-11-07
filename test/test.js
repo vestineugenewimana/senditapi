@@ -50,9 +50,9 @@ describe('PARCELS', () => {
         });
     });
   });
-  describe('Delete a parcel with id 2', () => {
+  describe('Delete a parcel with id 3', () => {
     it('should return one parcel object', (done) => {
-      const id = 2;
+      const id = 3;
       chai
         .request(app)
         .del(`/api/v1/parcels/${id}`)

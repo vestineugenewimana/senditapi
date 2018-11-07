@@ -9,7 +9,7 @@
     "build": "npm run clean && mkdir build && babel src/server.js db/parcels.js controllers/parcelsController.js -d build && npm run build-routes",
     "build-routes": "cd build && mkdir routes && babel .././routes/routes.js -d routes",
     "test": "mocha transpiledtest/test.js --exit",
-    "start": " npm test && npm run build && nodemon transpiled/index.js"
+    "start": "npm test && npm run build && nodemon transpiled/index.js"
   },
   "repository": {
     "type": "git",

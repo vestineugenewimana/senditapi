@@ -10,11 +10,9 @@ class parcelsController {
 
   static createParcel(req, res) {
     const newId = Parcels[Parcels.length - 1].id + 1;
-    const pickupLocation = req.body.pickupLocation;
-    const destinationLocation = req.body.destinationLocation;
-    const weight = req.body.weight;
-    const quantity = req.body.quantity;
-    const comment = req.body.comment;
+    const {
+      pickupLocation, destinationLocation, weight, comment, quantity,
+    } = req.body;
     const newParcel = {
       id: newId,
       comment,
@@ -35,7 +33,7 @@ class parcelsController {
   }
 
   static getOne(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
     const oneParcel = Parcels.find(parcel => parcel.id == id);
     if (oneParcel) {
       return res.json({
@@ -49,7 +47,7 @@ class parcelsController {
   }
 
   static removeParcel(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
     const oneParcel = Parcels.find(
       parcel => parcel.id == id, // returns true if the parcel is found with the id from params
     );
@@ -57,15 +55,14 @@ class parcelsController {
       const newParcels = Parcels.filter(
         parcel => parcel !== oneParcel, // returns an object without filtered parcel
       );
-      res.status(200).json({
+      return res.status(200).json({
         message: 'parcel deleted',
         Parcels: newParcels,
       });
-    } else {
-      return res.status(400).json({
-        message: 'parcel do not exist',
-      });
     }
+    return res.status(400).json({
+      message: 'parcel do not exist',
+    });
   }
 }
 

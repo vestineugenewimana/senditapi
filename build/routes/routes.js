@@ -20,6 +20,7 @@ var router = _express2.default.Router();
 router.get('/api/v1/parcels', _parcelsController2.default.getParcels);
 router.get('/api/v1/parcels/:id', _parcelsController2.default.getOne);
 router.post('/api/v1/parcels', _parcelsController2.default.createParcel);
+router.put('/api/v1/parcels/:id/cancel', _parcelsController2.default.cancelParcel);
 router.delete('/api/v1/parcels/:id', _parcelsController2.default.removeParcel);
 
 exports.default = router;

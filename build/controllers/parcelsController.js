@@ -27,6 +27,9 @@ var parcelsController = function () {
         parcels: _parcels2.default
       });
     }
+
+    // create a parcel
+
   }, {
     key: 'createParcel',
     value: function createParcel(req, res) {
@@ -56,6 +59,9 @@ var parcelsController = function () {
         message: 'could not add new parcel'
       });
     }
+
+    // get one parcel
+
   }, {
     key: 'getOne',
     value: function getOne(req, res) {
@@ -74,6 +80,26 @@ var parcelsController = function () {
         message: 'parcel not found'
       });
     }
+  }, {
+    key: 'cancelParcel',
+    value: function cancelParcel(req, res) {
+      var id = Number(req.params.id);
+      var oneParcel = _parcels2.default.find(function (parcel) {
+        return parcel.id === id;
+      });
+      if (oneParcel) {
+        res.status(200).json({
+          message: 'order cancelled'
+        });
+        return oneParcel.status = 'cancelled';
+      }
+      return res.status(400).json({
+        message: 'cannot cancel'
+      });
+    }
+
+    // remove one parcel
+
   }, {
     key: 'removeParcel',
     value: function removeParcel(req, res) {

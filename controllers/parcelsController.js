@@ -8,6 +8,7 @@ class parcelsController {
     });
   }
 
+  // create a parcel
   static createParcel(req, res) {
     const newId = Parcels[Parcels.length - 1].id + 1;
     const {
@@ -32,6 +33,7 @@ class parcelsController {
     });
   }
 
+  // get one parcel
   static getOne(req, res) {
     const { id } = req.params;
     const oneParcel = Parcels.find(parcel => parcel.id == id);
@@ -46,6 +48,21 @@ class parcelsController {
     });
   }
 
+  static cancelParcel(req, res) {
+    const id = Number(req.params.id);
+    const oneParcel = Parcels.find(parcel => parcel.id === id);
+    if (oneParcel) {
+      res.status(200).json({
+        message: 'order cancelled',
+      });
+      return (oneParcel.status = 'cancelled');
+    }
+    return res.status(400).json({
+      message: 'cannot cancel',
+    });
+  }
+
+  // remove one parcel
   static removeParcel(req, res) {
     const { id } = req.params;
     const oneParcel = Parcels.find(

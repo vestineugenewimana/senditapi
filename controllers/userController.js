@@ -1,26 +1,23 @@
 import Users from '../db/users';
-
+/* eslint linebreak-style: ["error", "windows"] */
 class userController {
   static getUsers(req, res) {
-    return res.json({
-      users: Users,
-    });
+    return res.json({ users: Users });
   }
 
   // registering a new user
   static addUser(req, res) {
     const { userId } = req.params;
-    const {
-      names, location, email, password,
-    } = req.body;
+    const { names, location, email, password } = req.body;
     const newUser = {
       id: userId,
       names,
       location,
       email,
       password,
-      parcels: [],
+      parcels: []
     };
+
     if (newUser) {
       Users.push(newUser);
       return res.status(200);
@@ -34,12 +31,13 @@ class userController {
     const user = Users.find(oneuser => oneuser.email == email);
     if (user && user.password == password) {
       res.status(200).json({
-        loggedinUser: user,
+        loggedinUser: user
       });
     }
     return res.status(400);
   }
 
+  //  user parcels
   static userParcel(req, res) {
     const { userId } = req.params;
     const user = Users.find(oneuser => oneuser.id == userId);

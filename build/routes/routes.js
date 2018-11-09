@@ -18,6 +18,8 @@ var _userController2 = _interopRequireDefault(_userController);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* eslint linebreak-style: ["error", "windows"] */
+
 var router = _express2.default.Router();
 
 // parcels endpoints

@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/* eslint linebreak-style: ["error", "windows"] */
 var parcels = [{
   id: 1,
   pickupLocation: 'Kigali, KG Avenue 25 est',

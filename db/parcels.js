@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 const parcels = [
   {
     id: 1,
@@ -5,7 +6,7 @@ const parcels = [
     destinationLocation: 'Nyanza, Nyanza Rd',
     weight: '15 g',
     quantity: '5',
-    status:'pending',
+    status: 'pending',
     comment: 'Laptop cables',
   },
   {
@@ -14,7 +15,7 @@ const parcels = [
     destinationLocation: 'Muhanga district Library',
     weight: '2 kg',
     quantity: '20',
-    status:'pending',
+    status: 'pending',
     comment: 'Books',
   },
   {
@@ -23,7 +24,7 @@ const parcels = [
     destinationLocation: 'Huye, National Museum',
     weight: '800 g',
     quantity: '2',
-    status:'pending',
+    status: 'pending',
     comment: 'Statues',
   },
   {
@@ -32,7 +33,7 @@ const parcels = [
     destinationLocation: 'Musanze Hospital',
     weight: '150 g',
     quantity: '1',
-    status:'pending',
+    status: 'pending',
     comment: 'Laptop',
   },
 ];

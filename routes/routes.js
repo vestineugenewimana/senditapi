@@ -1,6 +1,7 @@
 import express from 'express';
 import parcelController from '../controllers/parcelsController';
 import userController from '../controllers/userController';
+/* eslint linebreak-style: ["error", "windows"] */
 
 const router = express.Router();
 

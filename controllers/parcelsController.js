@@ -1,4 +1,5 @@
 import Parcels from '../db/parcels';
+/* eslint linebreak-style: ["error", "windows"] */
 
 class parcelsController {
   static getParcels(req, res) {

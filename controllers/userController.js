@@ -49,7 +49,7 @@ class userController {
     const { userId } = req.params;
     const user = Users.find(oneuser => oneuser.id == userId);
     if (user) {
-      res.status(200).json({ parcels: user.parcels });
+      res.status(200).json({ message: 'user parcels', parcels: user.parcels });
     }
     res.status(400);
   }

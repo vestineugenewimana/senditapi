@@ -56,7 +56,8 @@ class parcelsController {
       res.status(200).json({
         message: 'order cancelled',
       });
-      return (oneParcel.status = 'cancelled');
+
+      oneParcel.status = 'cancelled';
     }
     return res.status(400).json({
       message: 'cannot cancel',

@@ -55,22 +55,10 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ![](./all.PNG)
 
-### one parcel
+### passed all users tests
 
-![](./one.PNG)
-
-### create a parcel
-
-![](./created.PNG)
-
-### delete a parcel
-
-![](./delete.PNG)
-
-### passed all tests :)
-
-![](./passed.PNG)
+![](./usersPass.PNG)
 
 ### nyc coverage reports: to work with travis
 
-![](nyc.PNG)
+![](allpass.PNG)

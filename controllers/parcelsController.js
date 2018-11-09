@@ -44,6 +44,7 @@ class parcelsController {
       message: 'parcel not found',
     });
   }
+  // cancel a parcel order
 
   static cancelParcel(req, res) {
     const Id = req.params.id;

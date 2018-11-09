@@ -51,7 +51,7 @@ class parcelsController {
     if (cancelParcel) {
       const toCancel = req.body.cancelled;
       res.status(200).json({
-        message: 'this parcel order has been cancelled successfully',
+        message: 'order cancelled',
       });
       return (cancelParcel.cancel = toCancel);
     }

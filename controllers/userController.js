@@ -19,15 +19,9 @@ class userController {
       password,
       parcels: [],
     };
-
-    if (newUser) {
-      Users.push(newUser);
-      return res.status(200).json({
-        message: 'user registered',
-      });
-    }
-    return res.status(400).json({
-      message: 'failed to register new user',
+    Users.push(newUser);
+    return res.status(200).json({
+      message: 'user registered',
     });
   }
 
@@ -41,7 +35,9 @@ class userController {
         loggedinUser: user,
       });
     } else {
-      return res.status(400);
+      res.status(400).json({
+        message: 'failed to login',
+      });
     }
   }
 
@@ -52,7 +48,9 @@ class userController {
     if (user) {
       res.status(200).json({ message: 'user parcels', parcels: user.parcels });
     } else {
-      res.status(400);
+      res.status(400).json({
+        message: 'user does not have parcels',
+      });
     }
   }
 }

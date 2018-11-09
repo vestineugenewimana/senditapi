@@ -105,15 +105,13 @@ describe('PARCELS', () => {
         })
         .end((err, res) => {
           chai.expect(res.status).to.equal(200);
-          chai
-            .expect(res.body.message)
-            .to.equal('this parcel order has been cancelled successfully');
+          chai.expect(res.body.message).to.equal('order cancelled');
           done();
         });
     });
   });
-  describe('cancel a parcel with id 1', () => {
-    it('should cancel an order', (done) => {
+  describe('cancel a parcel with id 10', () => {
+    it('should fail to cancel an order', (done) => {
       const id = 10;
       chai
         .request(app)
@@ -178,6 +176,22 @@ describe('USERS', () => {
         });
     });
   });
+  describe('loggin a user with invalid email', () => {
+    it('should fail to login user', (done) => {
+      chai
+        .request(app)
+        .post('/api/v1/users/login')
+        .send({
+          email: 'fail@gmail.com',
+          password: 'testpassword',
+        })
+        .end((err, res) => {
+          chai.expect(res.status).to.equal(400);
+          chai.expect(res.body.message).to.equal('failed to login');
+          done();
+        });
+    });
+  });
   describe('list all user parcels', () => {
     it('should list all user parcels', (done) => {
       const userId = 1;
@@ -188,6 +202,19 @@ describe('USERS', () => {
           chai.expect(res.status).to.equal(200);
           chai.expect(res.body).to.be.a('object');
           chai.expect(res.body.message).to.equal('user parcels');
+          done();
+        });
+    });
+  });
+  describe('Fail to list user parcels with id 10', () => {
+    it('should not any parcel', (done) => {
+      const userId = 10;
+      chai
+        .request(app)
+        .get(`/api/v1/users/${userId}/parcels`)
+        .end((err, res) => {
+          chai.expect(res.status).to.equal(400);
+          chai.expect(res.body.message).to.equal('user does not have parcels');
           done();
         });
     });

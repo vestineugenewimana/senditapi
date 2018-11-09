@@ -52,14 +52,9 @@ var parcelsController = function () {
         weight: weight,
         quantity: quantity
       };
-      if (newParcel) {
-        _parcels2.default.push(newParcel);
-        return res.status(200).json({
-          message: 'created a new parcel'
-        });
-      }
-      return res.status(400).json({
-        message: 'invalid parcel'
+      _parcels2.default.push(newParcel);
+      return res.status(200).json({
+        message: 'created a new parcel'
       });
     }
 
@@ -83,6 +78,8 @@ var parcelsController = function () {
         message: 'parcel not found'
       });
     }
+    // cancel a parcel order
+
   }, {
     key: 'cancelParcel',
     value: function cancelParcel(req, res) {

@@ -4,8 +4,8 @@
   "description": "Sendit api,this api will power up the front end to allow users create parcels orders cancel them,list specific ones also list them by the user that created them",
   "main": "server.js",
   "scripts": {
-    "clean": "rmdir /S/Q build",
-    "clean-routes": "cd build && rmdir /S/Q routes",
+    "clean": "rm -rf build",
+    "clean-routes": "cd build && rm -rf routes",
     "build": "npm run clean && mkdir build && babel src/server.js db/parcels.js controllers/parcelsController.js -d build && npm run build-routes",
     "build-routes": "cd build && mkdir routes && babel .././routes/routes.js -d routes",
     "test": "nyc --require babel-core/register mocha transpiledtest/test.js --exit",
@@ -39,8 +39,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.5",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "nodemon": "^1.18.5"
   },
   "dependencies": {
     "express": "^4.16.4",

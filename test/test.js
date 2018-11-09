@@ -69,14 +69,13 @@ describe('PARCELS', () => {
   });
   describe('cancel a parcel with id 3', () => {
     it('should return canceled order message', (done) => {
-      const id = 3;
+      const id = 1;
       chai
         .request(app)
         .put(`/api/v1/parcels/${id}/cancel`)
         .set('content-type', 'application/json')
         .end((err, res) => {
           chai.expect(res.statusCode).to.be.equal(200);
-          chai.expect(res.body).to.be.a('object');
           done();
         });
     });
@@ -131,7 +130,7 @@ describe('USERS', () => {
         });
     });
   });
-  describe('list all user parcels', ()=>{
+  describe('list all user parcels', () => {
     it('should list all user parcels', (done) => {
       const userId = 1;
       chai
@@ -144,5 +143,5 @@ describe('USERS', () => {
           done();
         });
     });
-  })
+  });
 });

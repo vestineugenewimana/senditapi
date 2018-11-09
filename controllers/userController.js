@@ -3,7 +3,6 @@ import Users from '../db/users';
 class userController {
   static getUsers(req, res) {
     return res.json({
-      message: 'all users',
       users: Users,
     });
   }
@@ -24,13 +23,9 @@ class userController {
     };
     if (newUser) {
       Users.push(newUser);
-      return res.status(200).json({
-        message: 'registered successfuly',
-      });
+      return res.status(200);
     }
-    return res.json({
-      message: 'registration failed',
-    });
+    return res.status(400);
   }
 
   // login the user
@@ -39,24 +34,19 @@ class userController {
     const user = Users.find(oneuser => oneuser.email == email);
     if (user && user.password == password) {
       res.status(200).json({
-        message: 'successfuly logged in',
         loggedinUser: user,
       });
     }
-    return res.status(400).json({
-      message: 'user cannot log in',
-    });
+    return res.status(400);
   }
 
   static userParcel(req, res) {
     const { userId } = req.params;
     const user = Users.find(oneuser => oneuser.id == userId);
     if (user) {
-      res.status(200).json({ message: 'users parcel orders', parcels: user.parcels });
+      res.status(200).json({ parcels: user.parcels });
     }
-    res.json({
-      message: 'user does not exist',
-    });
+    res.status(400);
   }
 }
 export default userController;

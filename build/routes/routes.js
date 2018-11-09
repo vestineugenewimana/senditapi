@@ -29,4 +29,5 @@ router.delete('/api/v1/parcels/:id', _parcelsController2.default.removeParcel);
 // users endpoints
 
 router.get('/api/v1/users', _userController2.default.getUsers);
+router.post('/api/v1/register', _userController2.default.addUser);
 exports.default = router;

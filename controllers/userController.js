@@ -8,6 +8,7 @@ class userController {
     });
   }
 
+  // registering a new user
   static addUser(req, res) {
     const { userId } = req.params;
     const {
@@ -28,6 +29,21 @@ class userController {
     }
     return res.json({
       message: 'registration failed',
+    });
+  }
+
+  // login the user
+  static userLogin(req, res) {
+    const { email, password } = req.body;
+    const user = Users.find(oneuser => oneuser.email == email);
+    if (user && user.password == password) {
+      res.status(200).json({
+        message: 'successfuly logged in',
+        loggedinUser: user,
+      });
+    }
+    return res.status(400).json({
+      message: 'user cannot log in',
     });
   }
 }

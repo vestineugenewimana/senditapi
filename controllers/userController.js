@@ -8,21 +8,27 @@ class userController {
   // registering a new user
   static addUser(req, res) {
     const { userId } = req.params;
-    const { names, location, email, password } = req.body;
+    const {
+      names, location, email, password,
+    } = req.body;
     const newUser = {
       id: userId,
       names,
       location,
       email,
       password,
-      parcels: []
+      parcels: [],
     };
 
     if (newUser) {
       Users.push(newUser);
-      return res.status(200);
+      return res.status(200).json({
+        message: 'user registered',
+      });
     }
-    return res.status(400);
+    return res.status(400).json({
+      message: 'failed to register new user',
+    });
   }
 
   // login the user
@@ -31,7 +37,8 @@ class userController {
     const user = Users.find(oneuser => oneuser.email == email);
     if (user && user.password == password) {
       res.status(200).json({
-        loggedinUser: user
+        message: 'user logged in',
+        loggedinUser: user,
       });
     }
     return res.status(400);

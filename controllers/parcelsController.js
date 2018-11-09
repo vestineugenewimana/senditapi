@@ -17,20 +17,16 @@ class parcelsController {
     } = req.body;
     const newParcel = {
       id: newId,
+      cancel: false,
       comment,
       pickupLocation,
       destinationLocation,
       weight,
       quantity,
     };
-    if (newParcel) {
-      Parcels.push(newParcel);
-      return res.status(200).json({
-        message: 'created a new parcel',
-      });
-    }
-    return res.status(400).json({
-      message: 'could not add new parcel',
+    Parcels.push(newParcel);
+    return res.status(200).json({
+      message: 'created a new parcel',
     });
   }
 
@@ -50,17 +46,17 @@ class parcelsController {
   }
 
   static cancelParcel(req, res) {
-    const id = Number(req.params.id);
-    const oneParcel = Parcels.find(parcel => parcel.id === id);
-    if (oneParcel) {
+    const Id = req.params.id;
+    const cancelParcel = Parcels.find(parcel => parcel.id == Id);
+    if (cancelParcel) {
+      const toCancel = req.body.cancelled;
       res.status(200).json({
-        message: 'order cancelled',
+        message: 'this parcel order has been cancelled successfully',
       });
-
-      oneParcel.status = 'cancelled';
+      return (cancelParcel.cancel = toCancel);
     }
     return res.status(400).json({
-      message: 'cannot cancel',
+      message: 'parcel cannot be cancelled',
     });
   }
 

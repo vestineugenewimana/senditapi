@@ -24,7 +24,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /*  eslint linebreak-style:['error', 'windows'] */
 /* eslint linebreak-style: ["error", "windows"] */
-
 var app = (0, _express2.default)(); //  initialize express app
 app.use(_bodyParser2.default.urlencoded({ extended: true })); // allow submission of an object in the body
 app.use(_bodyParser2.default.json()); // transform data submitted into json

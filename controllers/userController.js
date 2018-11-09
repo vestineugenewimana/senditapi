@@ -40,8 +40,9 @@ class userController {
         message: 'user logged in',
         loggedinUser: user,
       });
+    } else {
+      return res.status(400);
     }
-    return res.status(400);
   }
 
   //  user parcels
@@ -50,8 +51,9 @@ class userController {
     const user = Users.find(oneuser => oneuser.id == userId);
     if (user) {
       res.status(200).json({ message: 'user parcels', parcels: user.parcels });
+    } else {
+      res.status(400);
     }
-    res.status(400);
   }
 }
 export default userController;

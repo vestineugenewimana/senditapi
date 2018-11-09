@@ -8,9 +8,9 @@ SendIT is a courier service that helps users deliver parcels to different destin
 - [RESTful URLs](#restful-urls)
 - [Request & Response Examples](#request--response-examples)
 
-##Setup Instructions
+## Setup Instructions
 
-###For mac os:
+### For mac os:
 
 -In package json change rmdir /S/Q to rm -rf
 

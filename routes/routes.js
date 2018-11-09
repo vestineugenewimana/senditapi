@@ -15,4 +15,5 @@ router.delete('/api/v1/parcels/:id', parcelController.removeParcel);
 router.get('/api/v1/users', userController.getUsers);
 router.post('/api/v1/users/register', userController.addUser);
 router.post('/api/v1/users/login', userController.userLogin);
+router.get('/api/v1/users/:userId/parcels', userController.userParcel);
 export default router;

@@ -20,6 +20,7 @@ class userController {
       location,
       email,
       password,
+      parcels: [],
     };
     if (newUser) {
       Users.push(newUser);
@@ -44,6 +45,17 @@ class userController {
     }
     return res.status(400).json({
       message: 'user cannot log in',
+    });
+  }
+
+  static userParcel(req, res) {
+    const { userId } = req.params;
+    const user = Users.find(oneuser => oneuser.id == userId);
+    if (user) {
+      res.status(200).json({ message: 'users parcel orders', parcels: user.parcels });
+    }
+    res.json({
+      message: 'user does not exist',
     });
   }
 }

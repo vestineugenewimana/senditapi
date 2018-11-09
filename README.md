@@ -1,5 +1,5 @@
 # SENDITAPI [![Build Status](https://travis-ci.com/helpybruce/senditapi.svg?branch=develop)](https://travis-ci.com/helpybruce/senditapi)
-[![Coverage Status](https://coveralls.io/repos/github/helpybruce/senditapi/badge.svg?branch=develop)](https://coveralls.io/github/helpybruce/senditapi?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/helpybruce/senditapi/badge.svg?branch=develop)]
 (https://coveralls.io/github/helpybruce/senditapi?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/e4f08a109cd87b28ddd8/maintainability)](https://codeclimate.com/github/helpybruce/senditapi/maintainability)
 
 SendIT is a courier service that helps users deliver parcels to different destinations. SendIT provides courier quotes based on weight categories.

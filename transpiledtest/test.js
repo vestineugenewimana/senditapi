@@ -1,2 +1,3 @@
 require('babel-register');
-require('../test/test');
+require('../test/parcelTest');
+require('../test/userTest');

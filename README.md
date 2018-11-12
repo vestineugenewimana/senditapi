@@ -29,7 +29,7 @@ $ npm start
 Run Tests:
 
 ```sh
-$ npm start
+$ npm run test
 ```
 
 ## RESTful URLs

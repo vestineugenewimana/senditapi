@@ -31,7 +31,7 @@ app.use((0, _morgan2.default)('dev')); // for logging the user data in color
 app.get('/', function (req, res) {
   return res.json({
     message: 'Welcome to sendit api',
-    endpoint: _endoints2.default
+    endpoints: _endoints2.default
   });
 });
 app.use(_routes2.default);

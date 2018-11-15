@@ -1,3 +1,4 @@
+import Joi from 'joi';
 import Users from '../db/users';
 /* eslint linebreak-style: ["error", "windows"] */
 class userController {
@@ -27,18 +28,26 @@ class userController {
 
   // login the user
   static userLogin(req, res) {
-    const { email, password } = req.body;
-    const user = Users.find(oneuser => oneuser.email == email);
-    if (user && user.password == password) {
-      res.status(200).json({
-        message: 'user logged in',
-        loggedinUser: user,
-      });
-    } else {
-      res.status(400).json({
-        message: 'failed to login',
-      });
-    }
+    const userdata = req.body;
+    const schema = Joi.object().keys({
+      email: Joi.string()
+        .email()
+        .required(),
+      password: Joi.string().required(),
+    });
+    Joi.validate(userdata, schema, (err, value) => {
+      const user = Users.find(oneuser => oneuser.email == value.email);
+      if (user && user.password == value.password) {
+        res.status(200).json({
+          message: 'user logged in',
+          loggedinUser: user,
+        });
+      } else {
+        res.status(400).json({
+          message: 'failed to login',
+        });
+      }
+    });
   }
 
   //  user parcels

@@ -57,8 +57,8 @@ describe('USERS', () => {
         .request(app)
         .post('/api/v1/users/login')
         .send({
-          email: 'fail@gmail.com',
-          password: 'testpassword',
+          email: ' ',
+          password: ' ',
         })
         .end((err, res) => {
           chai.expect(res.status).to.equal(400);

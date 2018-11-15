@@ -1,5 +1,4 @@
 import Joi from 'joi';
-import { cpus } from 'os';
 import Parcels from '../db/parcels';
 /* eslint linebreak-style: ["error", "windows"] */
 
@@ -91,13 +90,12 @@ class parcelsController {
     const oneParcel = Parcels.find(
       parcel => parcel.id == id, // returns true if the parcel is found with the id from params
     );
+    const parcelIndex = Parcels.indexOf(oneParcel);
     if (oneParcel) {
-      const newParcels = Parcels.filter(
-        parcel => parcel !== oneParcel, // returns an object without filtered parcel
-      );
+      Parcels.splice(parcelIndex, 1);
       return res.status(200).json({
         message: 'parcel deleted',
-        Parcels: newParcels,
+        Parcels,
       });
     }
     return res.status(400).json({

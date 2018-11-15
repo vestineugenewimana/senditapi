@@ -44,6 +44,8 @@ $ npm run test
   - POST https://senditbruceapi.herokuapp.com/api/v1/parcels
 - Cancel a parcel order:
   - PUT https://senditbruceapi.herokuapp.com/api/v1/parcels/:parcelId/cancel
+- Change a parcel status:
+  - PUT https://senditbruceapi.herokuapp.com/api/v1/parcels/status/:parcelId
 - Delete a parcel:
   - DELETE https://senditbruceapi.herokuapp.com/api/v1/parcels/:parcelId
 - List of all users:

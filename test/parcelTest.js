@@ -50,7 +50,7 @@ describe('PARCELS', () => {
         pickupLocation: 'Ruhango,Avenue 25 street',
         destinationLocation: 'Musanze, City Market',
         weight: '400 g',
-        quantity: '8',
+        quantity: 8,
         comment: 'clothes',
       };
       chai
@@ -61,6 +61,26 @@ describe('PARCELS', () => {
           chai.expect(res.statusCode).to.be.equal(200);
           chai.expect(res.body).to.be.a('object');
           chai.expect(res.body.message).to.equal('created a new parcel');
+
+          done();
+        });
+    });
+  });
+  describe('adding invalid parcel', () => {
+    it('should fail to add new parcel', (done) => {
+      const parcel = {
+        pickupLocation: 'Ruhango,Avenue 25 street',
+        destinationLocation: 'Musanze, City Market',
+        weight: '400 g',
+        comment: 'clothes',
+      };
+      chai
+        .request(app)
+        .post('/api/v1/parcels')
+        .send(parcel)
+        .end((err, res) => {
+          chai.expect(res.statusCode).to.be.equal(400);
+          chai.expect(res.body.message).to.equal('invalid data');
 
           done();
         });

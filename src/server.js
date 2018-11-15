@@ -2,7 +2,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import router from '../routes/routes';
-import endpoints from '../db/endoints';
+import endpoints from '../db/endpoints';
 /*  eslint linebreak-style:['error', 'windows'] */
 const app = express(); //  initialize express app
 app.use(express.json());

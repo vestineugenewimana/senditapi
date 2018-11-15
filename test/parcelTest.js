@@ -81,7 +81,7 @@ describe('PARCELS', () => {
     });
   });
   describe('Delete a parcel that doesnot exist', () => {
-    it('should return one parcel object', (done) => {
+    it('should fail to delete a parcel', (done) => {
       const id = 10;
       chai
         .request(app)

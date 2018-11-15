@@ -66,6 +66,34 @@ describe('PARCELS', () => {
         });
     });
   });
+  describe('adding a parcel status', () => {
+    it('should update status of  parcel', (done) => {
+      const id = 1;
+      chai
+        .request(app)
+        .put(`/api/v1/parcels/status/${id}`)
+        .end((err, res) => {
+          chai.expect(res.statusCode).to.be.equal(200);
+          chai.expect(res.body.message).to.equal('status changed');
+
+          done();
+        });
+    });
+  });
+  describe('adding a parcel status', () => {
+    it('should update status of  parcel', (done) => {
+      const id = 100;
+      chai
+        .request(app)
+        .put(`/api/v1/parcels/status/${id}`)
+        .end((err, res) => {
+          chai.expect(res.statusCode).to.be.equal(400);
+          chai.expect(res.body.message).to.equal('status could not be changed');
+
+          done();
+        });
+    });
+  });
   describe('adding invalid parcel', () => {
     it('should fail to add new parcel', (done) => {
       const parcel = {

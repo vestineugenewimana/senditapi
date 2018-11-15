@@ -4,13 +4,9 @@
   "description": "Sendit api,this api will power up the front end to allow users create parcels orders cancel them,list specific ones also list them by the user that created them",
   "main": "server.js",
   "scripts": {
-    "clean": "rmdir /S/Q build",
-    "clean-routes": "cd build && rmdir /S/Q routes",
-    "build": "npm run clean && mkdir build && babel src/server.js db/parcels.js controllers/parcelsController.js -d build && npm run build-routes",
-    "build-routes": "cd build && mkdir routes && babel .././routes/routes.js -d routes",
     "test": "nyc --require babel-core/register mocha transpiledtest/test.js --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "npm test && npm run build && nodemon transpiled/index.js"
+    "start": "npm test && nodemon transpiled/index.js"
   },
   "repository": {
     "type": "git",

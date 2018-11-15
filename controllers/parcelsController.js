@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import { cpus } from 'os';
 import Parcels from '../db/parcels';
 /* eslint linebreak-style: ["error", "windows"] */
 
@@ -17,6 +18,7 @@ class parcelsController {
       pickupLocation: Joi.string().required(),
       destinationLocation: Joi.string().required(),
       weight: Joi.string().required(),
+      status: Joi.string(),
       quantity: Joi.number().required(),
       comment: Joi.string(),
     });
@@ -48,6 +50,22 @@ class parcelsController {
     }
     return res.status(400).json({
       message: 'parcel not found',
+    });
+  }
+
+  // change parcel status
+  static changeParcelStatus(req, res) {
+    const { id } = req.params;
+    const oneParcel = Parcels.find(parcel => parcel.id == id);
+    if (oneParcel) {
+      const { updatedStatus } = req.body;
+      oneParcel.status = updatedStatus;
+      return res.status(200).json({
+        message: 'status changed',
+      });
+    }
+    return res.status(400).json({
+      message: 'status could not be changed',
     });
   }
   // cancel a parcel order

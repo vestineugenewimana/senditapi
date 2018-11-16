@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  padding: 0 2em;
+  box-sizing: border-box;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+
+.logo {
+  color: #fff;
+  font-family: "Open Sans";
+  transition: 0.5s;
+}
+
+.nav-link {
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.logo.darken,
+.nav-link.darken {
+  color: #888;
+}
+
+nav .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.menu.open {
+  height: 280px;
+}
+
+.header.shrink {
+  background-color: #fff;
+  height: 70px;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    height: 100px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    display: block;
+  }
+
+  .logo {
+    position: fixed;
+    left: 35px;
+    top: 30px;
+    color: #888;
+    font-family: "Open Sans";
+  }
+
+  nav {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    line-height: 60px;
+    background-color: #fff;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 0.8em;
+    text-align: center;
+  }
+
+  nav .menu {
+    height: 0;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  nav .menu li {
+    list-style: none;
+    display: block;
+  }
+
+  .tog-nav {
+    position: fixed;
+    width: 35px;
+    height: 25px;
+    z-index: 10;
+    right: 25px;
+    top: 40px;
+    transition: 0.5s;
+  }
+
+  .bar {
+    width: 30px;
+    height: 2px;
+    background-color: #888;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+  }
+
+  /* SEPARATES BARS */
+  .bar:nth-of-type(2) {
+    /* MIDDLE BAR */
+    top: 10px;
+  }
+
+  .bar:nth-of-type(1) {
+    /* BOTTOM BAR */
+    top: 20px;
+  }
+
+  /* ROTATE BARS ON OPEN TO MAKE X */
+  .bar:nth-of-type(3).rotate {
+    /* TOP BAR */
+    transform: rotate(-45deg);
+    top: 10px;
+    transition: 0.3s;
+  }
+
+  .bar:nth-of-type(2).hide {
+    opacity: 0;
+  }
+
+  .bar:nth-of-type(1).rotate {
+    transform: rotate(45deg);
+    top: 10px;
+    transition: 0.3s;
+  }
+}

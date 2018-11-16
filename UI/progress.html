@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.4.2/js/all.js"></script>
+  <script src="js/user.js"></script>
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/progress.css">
+  <link rel="stylesheet" href="css/user.css">
+
+  <script src="js/progress.js"></script>
+  <script src="js/modal.js"></script>
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="user.html" onclick="closeNav()">New Transit</a>
+    <a href="progress.html" onclick="hideForm()">Transit in progress</a>
+    <a href="transits.html" onclick="hideForm()">All Transits</a>
+    <a href="profile.html" onclick="hideForm()">Profile</a>
+    <a href="notifications.html" onclick="hideForm()">Notifications</a>
+    <a href="index.html" onclick="logout()">Logout</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Sendit</span>
+
+
+  <div class="wrapper">
+    <!-- new transit -->
+    <h1>Orders in Progress</h1>
+    <div class="tabl">
+      <table>
+        <thead>
+          <tr>
+            <th>Pickup</th>
+            <th>Destination</th>
+            <th>Comment</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nyanza</td>
+            <td class="change">
+              <span>Kigali</span>
+              <span class="edit" onclick="changeLoc()">
+                <i class="fas fa-edit fa-1x"></i>
+
+              </span>
+            </td>
+            <td>Emergency</td>
+            <td>5000rwf</td>
+            <td class="status">
+              <span>Pending</span>
+              <span class="trash" onclick="postPone(this)">
+                Cancel <i class="fas fa-trash fa-1x"></i>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Nyanza</td>
+            <td class="change">
+              <span>Kigali</span>
+              <span class="edit" onclick="changeLoc()">
+                <i class="fas fa-edit fa-1x"></i>
+              </span>
+            </td>
+            <td>Emergency</td>
+            <td>5000rwf</td>
+            <td class="status">
+              <span>Pending</span>
+              <span class="trash" onclick="postPone(this)">
+                Cancel <i class="fas fa-trash fa-1x"></i>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Nyanza</td>
+            <td class="change">
+              <span>Kigali</span>
+              <span class="edit" onclick="changeLoc()">
+                <i class="fas fa-edit fa-1x"></i>
+              </span>
+            </td>
+            <td>Emergency</td>
+            <td>5000rwf</td>
+            <td class="status">
+              <span>Pending</span>
+              <span class="trash" onclick="postPone(this)">
+                Cancel <i class="fas fa-trash fa-1x"></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- edit modal -->
+
+    <section class="modal" id="popup">
+      <div>
+        <form class="main">
+          <span class="close" onclick="closeModal()">
+            <i class="fas fa-times fa-1x"></i>
+
+          </span>
+          <input autofocus autocomplete="off" type="text" name="pickup" placeholder="What is the new location?">
+          <label>Destination</label>
+          <input type="submit" value="change location">
+        </form>
+      </div>
+  </div>
+  </section>
+</body>
+
+</html>

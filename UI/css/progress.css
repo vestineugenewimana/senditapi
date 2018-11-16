@@ -1,0 +1,161 @@
+.trash,
+.edit {
+  float: right;
+
+  padding: 2px;
+}
+
+h1 {
+  text-align: center;
+}
+td.change .edit,
+td.status .trash {
+  display: none;
+}
+
+td:hover .edit,
+td:hover .trash {
+  display: unset;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 10% 20% 20% 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(128, 0, 128, 0);
+}
+.close {
+  float: right;
+}
+.modal .main {
+  background: #080808;
+  padding: 20px;
+  margin: auto;
+  color: white;
+  width: 20%;
+}
+
+.modal input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.modal input[type="submit"] {
+  border: none;
+  background: purple;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 1em;
+  font-weight: 400;
+}
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(1) {
+  padding: 0.5em 0em;
+  color: white;
+}
+tr:hover,
+tr:nth-child(even):hover {
+  background-color: green;
+}
+tr:hover td {
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #240eb6;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+	*/
+  td:nth-of-type(1):before {
+    content: "Pick Up";
+  }
+  td:nth-of-type(2):before {
+    content: "Destination";
+  }
+  td:nth-of-type(3):before {
+    content: "Comment";
+  }
+  td:nth-of-type(4):before {
+    content: "Price";
+  }
+  td:nth-of-type(5):before {
+    content: "Status";
+  }
+  .modal .main {
+    background: #080808;
+    padding: 30px;
+    color: white;
+    width: 45%;
+  }
+}

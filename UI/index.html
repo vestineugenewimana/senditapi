@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://use.fontawesome.com/releases/v5.4.2/js/all.js"></script>
+
+  <link rel="stylesheet" href="css/header.css">
+  <title>Send It</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo">SendIt</h1>
+    <nav>
+      <div class="tog-nav bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div> <!-- end bars -->
+      <ul class="menu">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#what">What We Do?</a></li>
+        <li><a class="nav-link" href="#how">How We Work?</a></li>
+        <li><a class="nav-link" href="#contact">Contact Us</a></li>
+      </ul>
+    </nav> <!-- end nav -->
+  </header> <!-- end header -->
+  <script>
+    const hder = document.querySelector(".header");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const logo = document.querySelector(".logo");
+    const togNav = document.querySelector(".tog-nav");
+    const menu = document.querySelector(".menu");
+    const topBar = document.querySelector(".bar:nth-of-type(3)");
+    const midBar = document.querySelector(".bar:nth-of-type(2)");
+    const lowBar = document.querySelector(".bar:nth-of-type(1)");
+
+    function headShrink() {
+      let ypos = window.pageYOffset;
+      if (ypos > 1) {
+        hder.classList.add("shrink");
+        logo.classList.add("darken");
+        logo.style.top = "15px";
+        navLinks.forEach(link => link.classList.add("darken"));
+        togNav.style.top = "25px";
+        menu.style.top = "70px";
+      } else {
+        hder.classList.remove("shrink");
+        logo.classList.remove("darken");
+        logo.style.top = "30px";
+        menu.style.top = "100px";
+        navLinks.forEach(link => link.classList.remove("darken"));
+        togNav.style.top = "40px";
+      }
+    }
+
+    function toggleNav() {
+      menu.classList.toggle("open");
+      // ANIMATE BARS
+      topBar.classList.toggle("rotate");
+      midBar.classList.toggle("hide");
+      lowBar.classList.toggle("rotate");
+    }
+
+    window.addEventListener("scroll", headShrink);
+    togNav.addEventListener("click", toggleNav);
+  </script>
+  <div class="wrapper">
+    <!-- top section -->
+    <section class="top">
+      <div class="hero">
+        <h1>We Are SendIt</h1>
+        <h3>From Pickup to Destination</h3>
+        <p>We deliver your products on time with pure safety</p>
+        <a href="login.html" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- What we do -->
+
+    <section class="what" id="what">
+      <img src="./src/pack.jpg" alt="what we do">
+      <div>
+        <h2>What We Do?</h2>
+        <p>We deliver your stuffs to your desired destination, prices range with package weight.</p>
+      </div>
+    </section>
+
+    <!-- reputation -->
+    <section class="rep" id="how">
+      <div class="card">
+        <i class="fas fa-globe fa-4x"></i>
+        <h2>Fast</h2>
+        <h3>We deliver on time.</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-flash fa-4x"></i>
+
+        <h2>Secure</h2>
+        <h3>Security is our priority</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-phone fa-4x"></i>
+
+        <h2>24/7 customer support</h2>
+        <h3>We are always there to support.</h3>
+      </div>
+    </section>
+    <!-- Contact us -->
+    <section class="showcase" id="contact">
+      <div class="card">
+        <h2>OPENING HOURS</h2>
+        <h3>Monday-Friday 8:00-18:00</h3>
+        <p>Saturday 08:00-14:00</p>
+      </div>
+      <div class="card">
+        <h2>CALL US ANYTIME</h2>
+        <h3>+250 0000-0000</h3>
+        <p>+250 1000-0000</p>
+      </div>
+      <div class="card">
+        <h2>EMAIL US</h2>
+        <h3>sendit@andelachallenge.rw</h3>
+        <p>sendit@andelachallenge.rw</p>
+      </div>
+    </section>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="js/user.js"></script>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="user.html" onclick="closeNav()">New Transit</a>
+    <a href="progress.html" onclick="hideForm()">Transit in progress</a>
+    <a href="transits.html" onclick="hideForm()">All Transits</a>
+    <a href="profile.html" onclick="hideForm()">Profile</a>
+    <a href="notifications.html" onclick="hideForm()">Notifications</a>
+    <a href="index.html" onclick="logout()">Logout</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Sendit</span>
+
+
+  <div class="wrapper" id="#new">
+    <!-- new transit -->
+    <div class="profile">
+      <h1>My Profile</h1>
+      <span>
+        <h3>Names: </h3>
+        <p>Igwaneza Bruce</p>
+      </span>
+      <span>
+        <h3>Location: </h3>
+        <p>Kigali, KG 5 Avenue</p>
+      </span>
+    </div>
+  </div>
+</body>
+
+</html>

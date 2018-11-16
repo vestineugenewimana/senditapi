@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+  margin: 30px 50px;
+  line-height: 1.1;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+/* top section welcome */
+
+.top {
+  display: grid;
+  background-image: linear-gradient(135deg, #fd6585 10%, #0d25b9 100%);
+
+  grid-gap: 20px;
+  grid-gap: 20px;
+  grid-template-areas:
+    "hero hero"
+    "hero hero";
+}
+
+.hero {
+  grid-area: hero;
+  padding: 3rem;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  display: flex;
+
+  min-height: 400px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: white;
+}
+.hero p {
+  font-size: 18px;
+}
+
+.top a {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  outline: #ffa8a80a;
+  background: rgba(0, 0, 0, 0.212);
+}
+
+/* reputation */
+
+.rep {
+  display: grid;
+  background: rgba(0, 0, 0, 0.212);
+  padding: 3em;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* showcase */
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 80px;
+  align-content: center;
+  background: url("../src/wa.jpg");
+  background-position: center;
+}
+
+.card {
+  background: rgb(111, 63, 164);
+  box-shadow: 0 0 3px black;
+  border-radius: 14px;
+  text-align: center;
+  justify-content: center;
+}
+
+.card h2,
+.card h3,
+.card p {
+  color: rgb(26, 25, 25);
+  font-size: 16px;
+}
+
+.card h2 {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.what {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3em;
+}
+.what img {
+  width: 80%;
+  border-radius: 60%;
+}

@@ -1,0 +1,145 @@
+body {
+  background: #1d0358;
+  background: -webkit-linear-gradient(-135deg, #2e05e2, #160174);
+  background: -o-linear-gradient(-135deg, #2e05e2, #160174);
+  background: -moz-linear-gradient(-135deg, #2e05e2, #160174);
+  background: linear-gradient(-135deg, #2e05e2, #160174);
+}
+
+h1 {
+  text-align: center;
+}
+.rep {
+  display: grid;
+  padding: 3em;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  box-shadow: 0 0 3px black;
+  background: black;
+  border-radius: 14px;
+  text-align: center;
+  justify-content: center;
+}
+
+.card h2,
+.card h3,
+.card p {
+  color: white;
+  font-size: 16px;
+}
+
+.card h2 {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.what {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3em;
+}
+.what img {
+  width: 80%;
+  border-radius: 60%;
+}
+
+.fa-4x {
+  color: purple;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 1em;
+  font-weight: 400;
+}
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(1) {
+  background-color: rgb(110, 7, 93);
+  padding: 0.5em 0em;
+  color: white;
+}
+tr:hover,
+tr:nth-child(even):hover {
+  background-color: green;
+}
+tr:hover td {
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: white;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+	*/
+  td:nth-of-type(1):before {
+    content: "Pick Up";
+  }
+  td:nth-of-type(2):before {
+    content: "Destination";
+  }
+  td:nth-of-type(3):before {
+    content: "Comment";
+  }
+  td:nth-of-type(4):before {
+    content: "Price";
+  }
+  td:nth-of-type(5):before {
+    content: "Status";
+  }
+}

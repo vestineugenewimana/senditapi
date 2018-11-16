@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.4.2/js/all.js"></script>
+  <script src="js/user.js"></script>
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/transits.css">
+
+  <script src="js/progress.js"></script>
+  <script src="js/modal.js"></script>
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="user.html" onclick="closeNav()">New Transit</a>
+    <a href="progress.html" onclick="hideForm()">Transit in progress</a>
+    <a href="transits.html" onclick="hideForm()">All Transits</a>
+    <a href="profile.html" onclick="hideForm()">Profile</a>
+    <a href="notifications.html" onclick="hideForm()">Notifications</a>
+    <a href="index.html" onclick="logout()">Logout</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Sendit</span>
+
+  <section class="rep" id="how">
+
+    <div class="card">
+      <i class="fas fa-money-bill-alt fa-4x"></i>
+      <h2>Amount Spent :</h2>
+      <h3>15.000rwf</h3>
+    </div>
+    <div class="card">
+      <i class="fas fa-envelope fa-4x"></i>
+
+      <h2>Total Orders :</h2>
+      <h3>3 orders</h3>
+    </div>
+    <div class="card">
+      <i class="fas fa-envelope fa-4x"></i>
+
+      <h2>Pending Orders:</h2>
+      <h3>3 orders</h3>
+    </div>
+    <div class="card">
+      <i class="fas fa-envelope fa-4x"></i>
+
+      <h2>Delivered Orders:</h2>
+      <h3>0 orders</h3>
+    </div>
+  </section>
+</body>
+
+</html>

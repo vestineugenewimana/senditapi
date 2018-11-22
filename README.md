@@ -31,28 +31,17 @@ $ npm run test
 
 ## RESTful URLs
 
-- Homepage for parcels with api endpoints guidance:
-  - GET https://senditbruceapi.herokuapp.com
-- List all parcels:
-  - GET https://senditbruceapi.herokuapp.com/api/v1/parcels
-- Query one parcel by id:
-  - GET https://senditbruceapi.herokuapp.com/api/v1/parcels/:parcelId
-- Create a parcel:
-  - POST https://senditbruceapi.herokuapp.com/api/v1/parcels
-- Cancel a parcel order:
-  - PUT https://senditbruceapi.herokuapp.com/api/v1/parcels/:parcelId/cancel
-- Change a parcel status:
-  - PUT https://senditbruceapi.herokuapp.com/api/v1/parcels/status/:parcelId
-- Delete a parcel:
-  - DELETE https://senditbruceapi.herokuapp.com/api/v1/parcels/:parcelId
-- List of all users:
-  - GET https://senditbruceapi.herokuapp.com/api/v1/users
-- Register a new user:
-  - POST https://senditbruceapi.herokuapp.com/api/v1/users/register
-- Login a user:
-  - POST https://senditbruceapi.herokuapp.com/api/v1/users/login
-- Query user's parcels:
-  - GET https://senditbruceapi.herokuapp.com/api/v1/users/:userId/parcels
+| Method | Endpoint | Description
+| --- | --- | -- |
+| GET | /api/v1/parces | List all parcels |
+| GET | /api/v1/parcels/:parcelId | Query one parcel |
+| POST | /api/v1/parcels | Create a parcel order |
+| PUT | /api/v1/parcels/:parcelId/cancel | Cancel a parcel order |
+| DELETE | /api/v1/parcels/:parcelId | Delete a parcel order |
+| GET | /api/v1/users | List all users |
+| POST | /api/v1/users/register | Register a new user |
+| POST | /api/v1/users/login | Login a user |
+| GET | /api/v1/users/:userId/parcels | Query user's parcels |
 
 ## Request & Response Examples
 
